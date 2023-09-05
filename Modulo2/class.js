@@ -1,5 +1,14 @@
 class Copo { // Classe copo identifica copo
-    constructor (){}
+    constructor (liquido){
+        this.liquido = liquido
+    }
+    get mostrarLiquido(){
+        console.log('Este é um copo de', this.liquido)
+    }
+    set mudarLiquido(liquido){
+        this.liquido = liquido
+        console.log('Agora o copo é de', this.liquido)
+    }
     static cheio(vol, ml){ // static cheio verifica volume do copo e a quantidade de ml's nele
         let result
         switch(true){
@@ -30,4 +39,8 @@ class Copo { // Classe copo identifica copo
         return result
     }
 }
+let caneca = new Copo('Achocolatado')
+caneca.mostrarLiquido
+caneca.mudarLiquido = 'Café'
+caneca.mostrarLiquido
 console.log(Copo.cheio(223, 150))
