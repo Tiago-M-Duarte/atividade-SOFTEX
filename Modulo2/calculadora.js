@@ -1,7 +1,13 @@
 var prompt = require('prompt-sync')()
 
 function printResultado(){
+    try {
     console.log(op1, operador, op2, '=', resultado)
+        } catch(err){
+            console.log('Algo deu errado nisso aqui:', err.message)
+        } finally {
+            console.log('Operação finalizada')
+        }
 }
 
 function calcular(){
